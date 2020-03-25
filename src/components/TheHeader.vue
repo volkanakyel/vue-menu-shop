@@ -15,7 +15,6 @@
             </li>
             </ul>
                 <router-link class="nav-link" to="/cart"><i class="fas fa-shopping-cart"></i> Mon Panier</router-link>
-                
         </div>
     </nav>
 </div>
