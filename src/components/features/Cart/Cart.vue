@@ -10,16 +10,17 @@
     <table class="table table-hover">
       <thead>
           <tr>
-          <th scope="col">Plat</th>
-          <th scope="col">Description</th>
-          <th scope="col">Prix</th>
+            <th scope="col">Plat</th>
+            <th scope="col">Description</th>
+            <th scope="col">Prix</th>
           </tr>
       </thead>
-      <thead v-for="item in getCart" :key="item.id">
+      <thead v-for="(item, index) in getCart" :key="index">
           <tr>
-          <th scope="col">{{item.title}}</th>
-          <th scope="col">{{item.description}}</th>
-          <th scope="col">{{item.prix}}€</th>
+            <th scope="col">{{item.title}}</th>
+            <th scope="col">{{item.description}}</th>
+            <th scope="col">{{item.prix}}€</th>
+            <th><button class="btn btn-danger" @click="deleteCard(index)">Supprimer l'article</button></th>
           </tr>
       </thead>
     </table>
@@ -28,7 +29,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   computed: {
     ...mapGetters([
@@ -42,6 +43,11 @@ export default {
         return false;
       }
     }
+  },
+  methods: {
+    ...mapActions({
+            deleteCard: 'deleteCard',
+        }),
   }
 }
 </script>

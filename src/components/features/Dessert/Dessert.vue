@@ -21,13 +21,6 @@
             </div>
             <div>
                 <span> {{dessert.prix}} € </span>
-                <table class="table table-hover">
-                    <tbody>
-                        <tr class="table-success">
-                            <th scope="row" style="text-align: center;">Success</th>
-                        </tr>
-                    </tbody>
-                </table> 
                 <button @click="addCard(dessert)" class="btn btn-success btn-sm center-block"> Commander</button>
             </div>
         </div>
@@ -48,7 +41,7 @@ export default {
     methods: {
         ...mapActions({
             addCard: 'addCard',
-        })
+        }),
     }
 }
 </script>
