@@ -2,10 +2,9 @@
 <div class="p-3">
     <h1 style="text-align:center">Nos plats</h1>
     <hr>
-    <!-- <div v-if="getCart.length" class="alert alert-dismissible alert-success">
-        <button type="button" class="close" data-dismiss="alert"></button>
-        <h4 class="alert-heading">Ajouté au panier</h4>
-    </div> -->
+    <div v-if="getCommand" class="alert alert-success" role="alert">
+        Item added to your card
+    </div>
     <div class="d-flex flex-row flex-wrap p-1">
 
         <div v-for="plat in getPlats" :key="plat.id" class="w-25 p-3 product-container d-flex flex-column">
@@ -35,7 +34,8 @@ export default {
     computed:{
         ...mapGetters([
             'getPlats',
-            'getCart'
+            'getCart',
+            'getCommand'
         ])
     },
     methods: {

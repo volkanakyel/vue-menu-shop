@@ -1,7 +1,7 @@
 <template>
 <div class="jumbotron">
   <h2 class="display-3" style="text-align: center;">Mon panier</h2>
-  <div v-if="!printCart">
+  <div v-if="!getCart">
     <p class="lead" style="text-align: center;">Votre panier est vide :(</p>
   </div>
   <div v-else>

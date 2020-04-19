@@ -10,13 +10,17 @@ export default new Vuex.Store({
         getCart: state => state.cart,
         getDesserts: state => state.desserts,
         getPlats: state => state.plats,
+        getCommand: state => state.commandValid
     },
     mutations: {
         ADD_CARD(state, plat){
+            state.commandValid = true;
             state.cart.push(plat);
+            setTimeout(() => {
+                state.commandValid = false;
+            }, 1500);
         },
         DELETE_CARD(state, id) {
-            console.log(id)
             state.cart.splice(id, 1);
         }
     },

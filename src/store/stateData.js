@@ -1,4 +1,5 @@
 export default {
+    commandValid: false,
     plats:[
         {
             title: 'Lasagne',
